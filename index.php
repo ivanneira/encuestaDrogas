@@ -54,11 +54,13 @@
 
             </div>
 
-            <div class="tarjeta">
+            <div class="tarjeta row">
 
-                <h5>Departamento:</h5>
+                <div class="col-md-6">
 
-                <select required id="ddDepartamento" name="ddDepartamento" class="selectpicker" data-live-search="true" title="Seleccione un departamento...">
+                    <h5>Departamento:</h5>
+
+                    <select required id="ddDepartamento" name="ddDepartamento" class="selectpicker" data-live-search="true" title="Seleccione un departamento...">
                     <option value='412'>25 de Mayo</option>
                     <option value='413'>9 de Julio</option>
                     <option value='414'>Albardón</option>
@@ -80,9 +82,13 @@
                     <option value='430'>Zonda</option>
                 </select>
 
-                <h5>Localidad:</h5>
+                </div>
 
-                <select required id="ddDepartamento" name="ddDepartamento" class="selectpicker" data-live-search="true" title="Seleccione un localidad...">
+                <div class="col-md-6">
+
+                    <h5>Localidad:</h5>
+
+                    <select required id="ddDepartamento" name="ddDepartamento" class="selectpicker" data-live-search="true" title="Seleccione un localidad...">
                     <option value='2'>25 DE MAYO</option>
                     <option value='3'>CAMARICO</option>
                     <option value='4'>CHILCAS</option>
@@ -484,9 +490,11 @@
                     <option value='4541'>VILLA TACU</option>
                 </select>
 
+                </div>
+
             </div>
 
-            <div class="tarjeta">
+            <div class="tarjeta row">
 
                 <h5>Sexo:</h5>
 
@@ -502,7 +510,7 @@
 
             </div>
 
-            <div class="tarjeta">
+            <div class="tarjeta row">
 
                 <h5>¿Alguna vez consumió bebidas alcoholicas?</h5>
 
@@ -518,35 +526,199 @@
 
             </div>
 
-            <div class="tarjeta">
+            <div class="tarjeta row">
 
                 <h5>¿Alguna vez consumió drogas?</h5>
 
-                <div class="form-check">
-                    <label class="form-check-label">
-                        <span class="badge">SI</span>
-                        <input class="form-check-input" type="radio" name="cosoSI" id="exampleRadios1" value="option1" >
-                        <span class="badge">NO</span>
-                        <input class="form-check-input" type="radio" name="cosoSI" id="exampleRadios2" value="option2" >
+                <div class="consumio col-md-6">
 
-                        <br>
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <span class="badge">SI</span>
+                            <input class="form-check-input" type="radio" name="cosoSI" id="exampleRadios1" value="option1" >
+                            <span class="badge">NO</span>
+                            <input class="form-check-input" type="radio" name="cosoSI" id="exampleRadios2" value="option2" >
 
-                        <h5>¿Cuáles?</h5>
+                            <br>
+                         </label>
+                    </div>
 
-                        <select required id="ddDepartamento" name="ddDepartamento" class="selectpicker" data-live-search="true" title="Seleccione un departamento...">
-                            <option>Faso</option>
-                            <option>Merca</option>
-                            <option>Palitos de la selva</option>
-                        </select>
+                </div>
 
-                    </label>
+                <div class="noConsumio col-md-6">
+
+                    <h5>¿Cuáles?</h5>
+
+                    <select required id="ddDepartamento" name="ddDepartamento" class="selectpicker" data-live-search="true" title="Seleccione...">
+                        <option>Faso</option>
+                        <option>Merca</option>
+                        <option>Palitos de la selva</option>
+                    </select>
                 </div>
 
             </div>
 
+
+
+
+            <div class="tarjeta row">
+
+                <h5>¿Alguna vez pensó que tenía que reducir su consumo de bebidas algohólicas y/o drogas?</h5>
+
+                <div class="alcohol col-md-6">
+
+                    <h5>Alcohol:</h5>
+
+                    <div class="form-check">
+
+                        <label class="form-check-label">
+                            <span class="badge">SI</span>
+                            <input class="form-check-input" type="radio" name="cosoSI" id="exampleRadios1" value="option1" >
+                            <span class="badge">NO</span>
+                            <input class="form-check-input" type="radio" name="cosoSI" id="exampleRadios2" value="option2" >
+                        </label>
+
+                    </div>
+                </div>
+
+                <div class="drogas col-md-6">
+                    <h5>Drogas</h5>
+
+                    <div class="form-check">
+
+                        <label class="form-check-label">
+                            <span class="badge">SI</span>
+                            <input class="form-check-input" type="radio" name="cosoSI" id="exampleRadios1" value="option1" >
+                            <span class="badge">NO</span>
+                            <input class="form-check-input" type="radio" name="cosoSI" id="exampleRadios2" value="option2" >
+                        </label>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="tarjeta row">
+
+                <h5>¿Le han molestado las observaciones de su familia acerca de sus hábitos de consumo de bebidas o drogas?</h5>
+
+                <div class="alcohol col-md-6">
+
+                    <h5>Alcohol:</h5>
+
+                    <div class="form-check">
+
+                        <label class="form-check-label">
+                            <span class="badge">SI</span>
+                            <input class="form-check-input" type="radio" name="cosoSI" id="exampleRadios1" value="option1" >
+                            <span class="badge">NO</span>
+                            <input class="form-check-input" type="radio" name="cosoSI" id="exampleRadios2" value="option2" >
+                        </label>
+
+                    </div>
+                </div>
+
+                <div class="drogas col-md-6">
+                    <h5>Drogas</h5>
+
+                    <div class="form-check">
+
+                        <label class="form-check-label">
+                            <span class="badge">SI</span>
+                            <input class="form-check-input" type="radio" name="cosoSI" id="exampleRadios1" value="option1" >
+                            <span class="badge">NO</span>
+                            <input class="form-check-input" type="radio" name="cosoSI" id="exampleRadios2" value="option2" >
+                        </label>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="tarjeta row">
+
+                <h5>¿Alguna vez se sintió culpable por su manera de consumir alcohol o drogas?</h5>
+
+                <div class="alcohol col-md-6">
+
+                    <h5>Alcohol:</h5>
+
+                    <div class="form-check">
+
+                        <label class="form-check-label">
+                            <span class="badge">SI</span>
+                            <input class="form-check-input" type="radio" name="cosoSI" id="exampleRadios1" value="option1" >
+                            <span class="badge">NO</span>
+                            <input class="form-check-input" type="radio" name="cosoSI" id="exampleRadios2" value="option2" >
+                        </label>
+
+                    </div>
+                </div>
+
+                <div class="drogas col-md-6">
+                    <h5>Drogas</h5>
+
+                    <div class="form-check">
+
+                        <label class="form-check-label">
+                            <span class="badge">SI</span>
+                            <input class="form-check-input" type="radio" name="cosoSI" id="exampleRadios1" value="option1" >
+                            <span class="badge">NO</span>
+                            <input class="form-check-input" type="radio" name="cosoSI" id="exampleRadios2" value="option2" >
+                        </label>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="tarjeta row">
+
+                <h5>¿Alguna vez tuvo que consumir algún tipo de bebida o droga para empezar el día?</h5>
+
+                <div class="alcohol col-md-6">
+
+                    <h5>Alcohol:</h5>
+
+                    <div class="form-check">
+
+                        <label class="form-check-label">
+                            <span class="badge">SI</span>
+                            <input class="form-check-input" type="radio" name="cosoSI" id="exampleRadios1" value="option1" >
+                            <span class="badge">NO</span>
+                            <input class="form-check-input" type="radio" name="cosoSI" id="exampleRadios2" value="option2" >
+                        </label>
+
+                    </div>
+                </div>
+
+                <div class="drogas col-md-6">
+                    <h5>Drogas</h5>
+
+                    <div class="form-check">
+
+                        <label class="form-check-label">
+                            <span class="badge">SI</span>
+                            <input class="form-check-input" type="radio" name="cosoSI" id="exampleRadios1" value="option1" >
+                            <span class="badge">NO</span>
+                            <input class="form-check-input" type="radio" name="cosoSI" id="exampleRadios2" value="option2" >
+                        </label>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <br>
+            <br>
+
             <div class="text-center">
                 <button type="submit" onclick="javascript:enviarDatos();" class="btn btn-default">Enviar solicitud</button>
             </div>
+
+            <br>
+            <br>
+
 
         </form>
     </div>

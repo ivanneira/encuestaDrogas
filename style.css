@@ -1,11 +1,14 @@
 body {
-    background-color: #1b6d85;
+    background-color: #dddddd;
+
 }
+
 
 .tarjeta {
 
-    border: solid 2px black;
-    margin: 5px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    background-color: #cccccc;
+    margin: 5px 5px 20px 20px;
     padding: 10px;
     text-align: center;
 
@@ -13,5 +16,10 @@ body {
 
 .tarjeta h5 {
 
-    color: white;
+    color: #444;
+}
+
+.tarjeta{
+
+    max-width: 800px !important;
 }
