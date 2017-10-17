@@ -36,39 +36,109 @@
 
     <div class="row">
 
-        <div class="tarjeta">
+        <form id="frm_data" name="frm_data" action="" class="form-horizontal" onsubmit="return false;">
 
-        <h5>Es usted un trolazo?</h5>
+            <div class="tarjeta">
 
-            <div class="form-check">
-                <label class="form-check-label">
-                    <span class="badge">SI</span>
-                    <input class="form-check-input" type="radio" name="cosoSI" id="exampleRadios1" value="option1" >
-                    <span class="badge">NO</span>
-                    <input class="form-check-input" type="radio" name="cosoSI" id="exampleRadios2" value="option2" >
+                <h5>Numero de cuestionario:</h5>
 
-                </label>
+                <input type="number" class="form-control">
+
             </div>
 
-        </div>
+            <div class="tarjeta">
 
-        <div class="tarjeta">
+                <h5>Edad:</h5>
 
-            <h5>Es usted un trolazo?</h5>
+                <input type="number" class="form-control">
 
-            <div class="form-check">
-                <label class="form-check-label">
-                    <span class="badge">SI</span>
-                    <input class="form-check-input" type="radio" name="cosoSI" id="exampleRadios1" value="option1" >
-                    <span class="badge">NO</span>
-                    <input class="form-check-input" type="radio" name="cosoSI" id="exampleRadios2" value="option2" >
-
-                </label>
             </div>
 
-        </div>
+            <div class="tarjeta">
 
+                <h5>Departamento:</h5>
+
+                <select required id="ddDepartamento" name="ddDepartamento" class="selectpicker" data-live-search="true" title="Seleccione un departamento...">
+                    <option>Mustard</option>
+                    <option>Ketchup</option>
+                    <option>Relish</option>
+                </select>
+
+                <h5>Localidad:</h5>
+
+                <select required id="ddDepartamento" name="ddDepartamento" class="selectpicker" data-live-search="true" title="Seleccione un localidad...">
+                    <option>Mustard</option>
+                    <option>Ketchup</option>
+                    <option>Relish</option>
+                </select>
+
+            </div>
+
+            <div class="tarjeta">
+
+                <h5>Sexo:</h5>
+
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <span class="badge">Femenino</span>
+                        <input class="form-check-input" type="radio" name="cosoSI" id="exampleRadios1" value="option1" >
+                        <span class="badge">Masculino</span>
+                        <input class="form-check-input" type="radio" name="cosoSI" id="exampleRadios2" value="option2" >
+
+                    </label>
+                </div>
+
+            </div>
+
+            <div class="tarjeta">
+
+                <h5>¿Alguna vez consumió bebidas alcoholicas?</h5>
+
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <span class="badge">SI</span>
+                        <input class="form-check-input" type="radio" name="cosoSI" id="exampleRadios1" value="option1" >
+                        <span class="badge">NO</span>
+                        <input class="form-check-input" type="radio" name="cosoSI" id="exampleRadios2" value="option2" >
+
+                    </label>
+                </div>
+
+            </div>
+
+            <div class="tarjeta">
+
+                <h5>¿Alguna vez consumió drogas?</h5>
+
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <span class="badge">SI</span>
+                        <input class="form-check-input" type="radio" name="cosoSI" id="exampleRadios1" value="option1" >
+                        <span class="badge">NO</span>
+                        <input class="form-check-input" type="radio" name="cosoSI" id="exampleRadios2" value="option2" >
+
+                        <br>
+
+                        <h5>¿Cuáles?</h5>
+
+                        <select required id="ddDepartamento" name="ddDepartamento" class="selectpicker" data-live-search="true" title="Seleccione un departamento...">
+                            <option>Faso</option>
+                            <option>Merca</option>
+                            <option>Palitos de la selva</option>
+                        </select>
+
+                    </label>
+                </div>
+
+            </div>
+
+            <div class="text-center">
+                <button type="submit" onclick="javascript:enviarDatos();" class="btn btn-default">Enviar solicitud</button>
+            </div>
+
+        </form>
     </div>
+
 
 </div>
 
@@ -80,36 +150,6 @@
 <script src="bower_components/jquery/dist/jquery.min.js"></script>
 <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="bower_components/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
-
-
-
-<script>
-
-    function metele() {
-        $.ajax({
-            type: "POST",
-            async: true,
-            url: "db/save.php",
-            data: $("#frm_data").serialize(),
-            dataType: "json",
-            success: function (response) {
-
-                var data = response;
-
-                console.dir(response);
-
-                if (data.estado == "true") {
-                    alert(data.mensaje);
-                    $('#frm_data')[0].reset();
-                    location.reload();
-                }
-            },
-            error: function (e) {
-                event.stopPropagation();
-                alert("error al enviar solicitud, reintente");
-            }
-        });
-    }
-
-</script>
+<!--user script-->
+<script src="script.js"></script>
 </html>

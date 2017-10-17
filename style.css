@@ -1,11 +1,17 @@
+body {
+    background-color: #1b6d85;
+}
+
 .tarjeta {
 
     border: solid 2px black;
     margin: 5px;
+    padding: 10px;
+    text-align: center;
 
 }
 
 .tarjeta h5 {
 
-    color: blue;
+    color: white;
 }
