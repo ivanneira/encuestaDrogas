@@ -1,0 +1,22 @@
+{
+  "name": "encuestaDrogas",
+  "homepage": "https://github.com/ivanneira/encuestaDrogas",
+  "authors": [
+    "ivanneira <ien1983@gmail.com>"
+  ],
+  "description": "abm para ingreso de datos",
+  "main": "index.php",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-select": "^1.12.4",
+    "bootstrap": "^3.3.7",
+    "popper.js": "^1.12.5"
+  }
+}
