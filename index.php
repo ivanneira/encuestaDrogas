@@ -80,4 +80,36 @@
 <script src="bower_components/jquery/dist/jquery.min.js"></script>
 <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="bower_components/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+
+
+
+<script>
+
+    function metele() {
+        $.ajax({
+            type: "POST",
+            async: true,
+            url: "db/save.php",
+            data: $("#frm_data").serialize(),
+            dataType: "json",
+            success: function (response) {
+
+                var data = response;
+
+                console.dir(response);
+
+                if (data.estado == "true") {
+                    alert(data.mensaje);
+                    $('#frm_data')[0].reset();
+                    location.reload();
+                }
+            },
+            error: function (e) {
+                event.stopPropagation();
+                alert("error al enviar solicitud, reintente");
+            }
+        });
+    }
+
+</script>
 </html>
