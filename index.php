@@ -18,6 +18,7 @@
 
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="bower_components/bootstrap-select/dist/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="style.css">
 
 
 </head>
@@ -34,6 +35,38 @@
     </div>
 
     <div class="row">
+
+        <div class="tarjeta">
+
+        <h5>Es usted un trolazo?</h5>
+
+            <div class="form-check">
+                <label class="form-check-label">
+                    <span class="badge">SI</span>
+                    <input class="form-check-input" type="radio" name="cosoSI" id="exampleRadios1" value="option1" >
+                    <span class="badge">NO</span>
+                    <input class="form-check-input" type="radio" name="cosoSI" id="exampleRadios2" value="option2" >
+
+                </label>
+            </div>
+
+        </div>
+
+        <div class="tarjeta">
+
+            <h5>Es usted un trolazo?</h5>
+
+            <div class="form-check">
+                <label class="form-check-label">
+                    <span class="badge">SI</span>
+                    <input class="form-check-input" type="radio" name="cosoSI" id="exampleRadios1" value="option1" >
+                    <span class="badge">NO</span>
+                    <input class="form-check-input" type="radio" name="cosoSI" id="exampleRadios2" value="option2" >
+
+                </label>
+            </div>
+
+        </div>
 
     </div>
 
