@@ -19,7 +19,37 @@ body {
     color: #444;
 }
 
-.tarjeta{
+.tarjeta {
 
-    max-width: 800px !important;
+    max-width: 800px;
+
+}
+
+#numeroCuestionario, #edad {
+    width: 200px;
+}
+
+.tarjeta:hover {
+     box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+
+}
+
+
+input[type="radio"]{
+
+    width: 60px !important;
+    height: 60px !important;
+
+}
+
+.form-check-label {
+    width: 100%;
+    vertical-align: baseline !important;
+    display: inline !important;
+}
+
+
+label {
+
+   color: darkslategrey;
 }

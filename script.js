@@ -1,6 +1,9 @@
 /**
  * Created by Ivan on 17/10/2017.
  */
+
+
+
 $(function(){
 
 
@@ -9,10 +12,45 @@ $(function(){
         size: 4
     });
 
+    $("#numeroCuestionario").focus();
+
+
+    $(document).keypress(function(data){
+
+    });
+
+    $('input[name=bebida]').change(function(){
+
+        if($(this).val() == 0){
+
+            $(".alcohol").hide();
+        }else{
+            $(".alcohol").show();
+        }
+    });
+
+    $('input[name=droga]').change(function(){
+
+        if($(this).val() == 0){
+
+            $(".drogas").hide();
+        }else{
+            $(".drogas").show();
+        }
+    });
+
+
 });
 
 
+
+
+
+
 function enviarDatos() {
+
+    console.dir($("#frm_data").serialize());
+    /*
     $.ajax({
         type: "POST",
         async: true,
@@ -35,5 +73,5 @@ function enviarDatos() {
             event.stopPropagation();
             alert("error al enviar solicitud, reintente");
         }
-    });
+    });*/
 }
