@@ -17,6 +17,7 @@
 
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="bower_components/bootstrap-select/dist/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="bower_components/animate.css/animate.min.css">
     <!--User Style-->
     <link rel="stylesheet" href="main.css">
 </head>
@@ -30,50 +31,11 @@
             </div>
         </div>
 
-        <div class="tarjetaPrincipal">
 
-
-
-            <div class="row">
-
-                    <div class="col-md-6">
-
-                            <input required="true" type="number" class="form-control" id="numeroCuestionario" tabindex="1" placeholder="Cuestionario Nº">
-
-
-                    </div>
-                    <div class="col-md-6">
-
-
-                        <input required="text" type="number" class="form-control" id="numeroCuestionario" tabindex="2" placeholder="Escuela">
-
-                    </div>
-            </div>
-
-            <br>
-
-            <div class="row">
-
-                <div class="col-md-6">
-
-                    <input required="true" type="text" class="form-control" id="numeroCuestionario" tabindex="3" placeholder="Departamento">
-
-
-                </div>
-
-                <div class="col-md-6">
-
-
-                    <input required="text" type="text" class="form-control" id="numeroCuestionario" tabindex="4" placeholder="Localidad">
-
-                </div>
-            </div>
-
-        </div>
 
         <br>
 
-        <div class="preguntas">
+        <div class="row preguntas">
 
             <!--Contenido dinámico-->
 
@@ -85,6 +47,8 @@
 <script src="bower_components/jquery/dist/jquery.min.js"></script>
 <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="bower_components/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+<script src="bower_components/async/dist/async.js"></script>
+<script src="bower_components/animateCSS/dist/jquery.animatecss.min.js"></script>
 <!--user script-->
 <script src="main.js"></script>
 

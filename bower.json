@@ -17,6 +17,8 @@
   "dependencies": {
     "bootstrap-select": "^1.12.4",
     "bootstrap": "^3.3.7",
-    "popper.js": "^1.12.5"
+    "popper.js": "^1.12.5",
+    "async": "^2.5.0",
+    "animate.css": "^3.5.2"
   }
 }
