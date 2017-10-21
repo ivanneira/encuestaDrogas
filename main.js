@@ -86,6 +86,7 @@ function llenarHTML(index){
 
 
     $("#tarjeta"+index)
+
         .animateCSS("fadeOutDown",function(){
 
             $(this).hide();
