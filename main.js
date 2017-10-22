@@ -2,12 +2,13 @@
  * Created by Ivan on 20/10/2017.
  */
 
-//esta variable especifica la cantidad de tarjetas que se van a mostrar
-
+//esta variable especifica la cantidad de tarjetas que se van a mostrar, se edita según la necesidad
 var cantidad = 2;
 
+//carga
 $(function(){
 
+    //extend de animatecc
     $.fn.extend({
         animateCss: function (animationName) {
             var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
@@ -18,16 +19,21 @@ $(function(){
         }
     });
 
+    //bucle que carga las tarjetas
     for (var i = cantidad ; i >= 1 ; i --){
 
         llenarHTML(i);
     }
 });
 
+//función que carga las tarjetas 1 a 1
 function llenarHTML(index){
 
-    var randomRotate = Math.floor(Math.random()*10) - 5;
+    //rotación de las tarjetas
+    var rotation = 5;
+    var randomRotate = Math.floor(Math.random()*10) - rotation;
 
+    //marco principal con boton siguiente y comenzar de nuevo
     var htmlFrame =
         '<div style="visibility: hidden ;transform:rotate('+ randomRotate +'deg)" class="row tarjeta" id="tarjeta'+ index +'">' +
             '<div class="tContainer'+ index+'">' +
@@ -47,6 +53,7 @@ function llenarHTML(index){
 
     async.series(
         [
+            //carga por ajax
             function(callback){
 
                 $.post("tarjeta"+ index +".html", function(result){
@@ -57,18 +64,21 @@ function llenarHTML(index){
 
 
             },
+            //carga en el contenedor
             function(callback){
 
                 $(".tContainer"+ index).append(html);
 
                 callback();
             },
+            //hace visible a la tarjeta
             function(callback){
 
                 $("#tarjeta"+index).css("visibility","visible");
 
                 callback();
             },
+            //animación de la tarjeta
             function(callback){
 
                 $("#tarjeta"+index).animateCss("fadeInUp");
@@ -79,22 +89,24 @@ function llenarHTML(index){
         ]
     );
 
+    //evento de botón empezar de nuevo
     $(".restart").click(function(){
 
         window.location.reload();
     });
 
 
+    //evento del botón siguiente
     $("#btnSiguiente"+index).click(function(){
-
-        //ACA EJECUTARIA EL EVENTO QUE CARGA LOS DATOS
-
 
         //escondo la tarjeta
         $("#tarjeta"+index)
 
+
             .animateCSS("fadeOutDown",function(){
 
+                $( document ).trigger( "tarjeta"+ index );
+                console.dir(respuesta1);
                 $(this).hide();
             });
 

@@ -1,11 +1,19 @@
 <script>
 
     //la variable debe ser
-    //- respuesta + número de tarjeta (índice)
+    //- respuesta + número de tarjeta (índice) ej: tarjeta1 o tarjeta2
     //- objeto json
     var respuesta1;
 
-    //ACA TENDRIA QUE PONER EL EVENTO PERSONALIZADO QUE ASIGNA VALORES A LOS CAMPOS (evento + índice)
+    //evento personalizo para la carga de el bojeto con los datos (evento + índice)
+    $( document ).on( "tarjeta1", function( event ) {
+        respuesta1 =
+                    {
+
+                        numeroCuestionario: $("#numeroCuestionario").val()
+                    }
+    });
+
 
 </script>
 
@@ -21,7 +29,7 @@
         <div class="col-md-6">
 
 
-            <input required="text" type="number" class="form-control" id="numeroCuestionario" tabindex="2" placeholder="Escuela">
+            <input required="text" type="number" class="form-control" id="es" tabindex="2" placeholder="Escuela">
 
         </div>
     </div>
@@ -32,7 +40,7 @@
 
         <div class="col-md-6">
 
-            <input required="true" type="text" class="form-control" id="numeroCuestionario" tabindex="3" placeholder="Departamento">
+            <input required="true" type="text" class="form-control" id="numedsdestionario" tabindex="3" placeholder="Departamento">
 
 
         </div>
@@ -40,7 +48,7 @@
         <div class="col-md-6">
 
 
-            <input required="text" type="text" class="form-control" id="numeroCuestionario" tabindex="4" placeholder="Localidad">
+            <input required="text" type="text" class="form-control" id="numeroCudfsdfsdfonario" tabindex="4" placeholder="Localidad">
 
         </div>
     </div>
