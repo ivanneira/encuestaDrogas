@@ -87,8 +87,10 @@ function llenarHTML(index){
 
     $("#btnSiguiente"+index).click(function(){
 
+        //ACA EJECUTARIA EL EVENTO QUE CARGA LOS DATOS
 
 
+        //escondo la tarjeta
         $("#tarjeta"+index)
 
             .animateCSS("fadeOutDown",function(){
