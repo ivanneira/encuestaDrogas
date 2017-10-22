@@ -2,8 +2,22 @@
  * Created by Ivan on 20/10/2017.
  */
 
-//esta variable especifica la cantidad de tarjetas que se van a mostrar, se edita según la necesidad
-var cantidad = 2;
+//En ésta variable se agregan los nombres de las variables que devuelven los datos en cada tarjeta, toma la cantidad del largo del arreglo
+var respuestasTarjetas =
+    [
+        {
+            respuesta1: null
+        },
+        {
+            respuesta2: null
+        }
+];
+
+var cantidad = respuestasTarjetas.length;
+var tarjetasVisibles = cantidad;
+
+//variable con el resultado
+var finalResult = [];
 
 //carga
 $(function(){
@@ -102,17 +116,29 @@ function llenarHTML(index){
         //escondo la tarjeta
         $("#tarjeta"+index)
 
-
             .animateCSS("fadeOutDown",function(){
 
                 $( document ).trigger( "tarjeta"+ index );
-                console.dir(respuesta1);
+
+                tarjetasVisibles -- ;
+
+                if(tarjetasVisibles == 0){
+                    finalizarEncuesta();
+                }
+                //console.dir(respuestasTarjetas.respuesta1);
                 $(this).hide();
             });
 
     });
+}
 
+function finalizarEncuesta(){
 
+    var html =
+        '<div class="finalizado tarjeta">'+
+            '<button class="btn btn-danger">Finalizado</button>'+
+        '</div>';
 
-
+    $(".preguntas").append(html);
+    $(".finalizado").animateCss("fadeInUp");
 }

@@ -1,13 +1,12 @@
 <script>
 
     //la variable debe ser
-    //- respuesta + número de tarjeta (índice) ej: tarjeta1 o tarjeta2
+    //- respuestasTarjetas + respuesta + número de tarjeta (índice) ej: respuestasTarjetas.respuesta1 ,respuestasTarjetas.respuesta2
     //- objeto json
-    var respuesta1;
 
     //evento personalizo para la carga de el bojeto con los datos (evento + índice)
     $( document ).on( "tarjeta1", function( event ) {
-        respuesta1 =
+        respuestasTarjetas.respuesta1 =
                     {
 
                         numeroCuestionario: $("#numeroCuestionario").val()
