@@ -2,18 +2,16 @@
  * Created by Ivan on 20/10/2017.
  */
 
-//En ésta variable se agregan los nombres de las variables que devuelven los datos en cada tarjeta, toma la cantidad del largo del arreglo
-var respuestasTarjetas =
-    [
-        {
-            respuesta1: null
-        },
-        {
-            respuesta2: null
-        }
-];
+//se especifica la cantidad
+var cantidad = 2;
 
-var cantidad = respuestasTarjetas.length;
+//En ésta variable se agregan los nombres de las variables que devuelven los datos en cada tarjeta
+var respuestasTarjetas = [];
+
+//Mensaje final al completar la encuesta
+var mensajeFinal = '<p> Completaste la encuesta, presiona "Finalizado" para guardar los datos y comenzar otra vez.</p>';
+
+
 var tarjetasVisibles = cantidad;
 
 //variable con el resultado
@@ -136,9 +134,25 @@ function finalizarEncuesta(){
 
     var html =
         '<div class="finalizado tarjeta">'+
-            '<button class="btn btn-danger">Finalizado</button>'+
+            '<h4>Encuesta Completada!</h4>'+
+                mensajeFinal +
+            '<button class="btn btn-danger" id="finalizar">Finalizado</button>'+
         '</div>';
 
     $(".preguntas").append(html);
     $(".finalizado").animateCss("fadeInUp");
+
+    $("#finalizar").click(function(){
+
+        alert(saveToDb());
+
+
+    });
+}
+
+function saveToDb(){
+
+    console.dir(respuestasTarjetas);
+
+    return "Se guardó correctamente";
 }
