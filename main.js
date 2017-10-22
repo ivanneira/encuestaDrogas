@@ -34,7 +34,7 @@ function llenarHTML(index){
             '</div>' +
             '<br>'+
             '<div class="col-md-6 col-sm-6">' +
-                '<div class="btn btn-lg btn-block btn-warning" id="btnAtras'+ index +'">Atrás</div>' +
+                '<div class="btn btn-lg btn-block btn-default restart" ">Empezar de nuevo</div>' +
             '</div>' +
             '<div class="col-md-6 col-sm-6">' +
                 '<div class="btn btn-lg btn-block btn-success" id="btnSiguiente'+ index +'">Siguiente</div>'+
@@ -79,21 +79,24 @@ function llenarHTML(index){
         ]
     );
 
+    $(".restart").click(function(){
+
+        window.location.reload();
+    });
 
 
-    $("#btnAtras"+index).click(function(){
+    $("#btnSiguiente"+index).click(function(){
 
 
 
-    $("#tarjeta"+index)
+        $("#tarjeta"+index)
 
-        .animateCSS("fadeOutDown",function(){
+            .animateCSS("fadeOutDown",function(){
 
-            $(this).hide();
-        });
+                $(this).hide();
+            });
 
-        //$("#tarjeta"+index).remove();
-    })
+    });
 
 
 
