@@ -128,7 +128,7 @@ function llenarHTML(index){
                         //escondo la tarjeta
                         $("#tarjeta"+index)
 
-                            .animateCSS("fadeOutDown",function(){
+                            .animateCSS("fadeOutLeftBig",function(){
 
                                 tarjetasVisibles -- ;
 
