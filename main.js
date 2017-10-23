@@ -17,6 +17,8 @@ var tarjetasVisibles = cantidad;
 //variable con el resultado
 var finalResult = [];
 
+var continuar = false;
+
 //carga
 $(function(){
 
@@ -111,22 +113,39 @@ function llenarHTML(index){
     //evento del botón siguiente
     $("#btnSiguiente"+index).click(function(){
 
-        //escondo la tarjeta
-        $("#tarjeta"+index)
+        async.series(
+            [
+                function(callback){
 
-            .animateCSS("fadeOutDown",function(){
+                    $( document ).trigger( "tarjeta"+ index );
 
-                $( document ).trigger( "tarjeta"+ index );
+                    callback();
+                },
+                function(callback){
 
-                tarjetasVisibles -- ;
+                    if(continuar){
 
-                if(tarjetasVisibles == 0){
-                    finalizarEncuesta();
+                        //escondo la tarjeta
+                        $("#tarjeta"+index)
+
+                            .animateCSS("fadeOutDown",function(){
+
+                                tarjetasVisibles -- ;
+
+                                //comprobación de finalizar encuesta
+                                if(tarjetasVisibles == 0){
+                                    finalizarEncuesta();
+                                }
+                                //console.dir(respuestasTarjetas.respuesta1);
+                                $(this).hide();
+                            });
+
+                    }
+
+                    callback();
                 }
-                //console.dir(respuestasTarjetas.respuesta1);
-                $(this).hide();
-            });
-
+            ]
+        );
     });
 }
 
