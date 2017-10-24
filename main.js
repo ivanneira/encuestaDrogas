@@ -110,6 +110,8 @@ function llenarHTML(index){
     });
 
 
+
+
     //evento del botón siguiente
     $("#btnSiguiente"+index).click(function(){
 
@@ -155,7 +157,12 @@ function finalizarEncuesta(){
         '<div class="finalizado tarjeta">'+
             '<h4>Encuesta Completada!</h4>'+
                 mensajeFinal +
-            '<button class="btn btn-danger" id="finalizar">Finalizado</button>'+
+            '<div class="col-md-6 col-sm-6">' +
+                '<div class="btn btn-lg btn-block btn-default restart" ">No guardar</div>' +
+            '</div>' +
+            '<div class="col-md-6 col-sm-6">' +
+                '<button class="btn btn-lg btn-block btn-danger" id="finalizar">Finalizado</button>'+
+            '</div>' +
         '</div>';
 
     $(".preguntas").append(html);

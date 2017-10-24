@@ -1,0 +1,76 @@
+<script>
+
+    //la variable debe ser
+    //- respuestasTarjetas + respuesta + número de tarjeta (índice) ej: respuestasTarjetas.respuesta1 ,respuestasTarjetas.respuesta2
+    //- objeto json
+
+    //evento personalizo para la carga de el objeto con los datos (evento + índice)
+    //hay que escribir a mano qué campo corresponde a cada variable
+    $( document ).on( "tarjeta1", function( event ) {
+
+        //guarda los datos
+        if(validadores()){
+
+            respuestasTarjetas.respuesta1 =
+            {
+
+                numeroCuestionario: $("#numeroCuestionario").val()
+            };
+
+            //cuando los datos se ingresaron correctamente
+            //se puede programar acá cualquier evento o aviso cuando se ingresan mal los datos
+        }else{
+
+            alert("no se ingresó correctamente algún dato")
+        }
+
+    });
+
+    //Dentro de esta función se puede establecer cualquier tipo de criterio para evaluar si puede o no guardarse el dato
+    function validadores(){
+
+        //variable global continuar definida en main.js
+        continuar = true;
+        return continuar;
+    }
+
+
+</script>
+
+
+<div class="row">
+
+
+
+    <div class="col-md-6">
+
+        <input required="true" type="number" class="form-control" id="numeroCuestionario" tabindex="1" placeholder="Cuestionario Nº">
+
+
+    </div>
+    <div class="col-md-6">
+
+
+        <input required="text" type="number" class="form-control" id="es" tabindex="2" placeholder="Escuela">
+
+    </div>
+</div>
+
+<br>
+
+<div class="row">
+
+    <div class="col-md-6">
+
+        <input required="true" type="text" class="form-control" id="numedsdestionario" tabindex="3" placeholder="Departamento">
+
+
+    </div>
+
+    <div class="col-md-6">
+
+
+        <input required="text" type="text" class="form-control" id="numeroCudfsdfsdfonario" tabindex="4" placeholder="Localidad">
+
+    </div>
+</div>
