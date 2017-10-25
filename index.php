@@ -18,6 +18,8 @@
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="bower_components/bootstrap-select/dist/css/bootstrap-select.min.css">
     <link rel="stylesheet" href="bower_components/animate.css/animate.css">
+    <link rel="stylesheet" href="bower_components/bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.min.css">
+
     <!--User Style-->
     <link rel="stylesheet" href="main.css">
 </head>
@@ -44,11 +46,12 @@
 
 </body>
 
-<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/jquery/jquery.min.js"></script>
 <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="bower_components/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
 <script src="bower_components/async/dist/async.js"></script>
 <script src="bower_components/animateCSS/dist/jquery.animatecss.min.js"></script>
+<script src="bower_components/bootstrap-switch/dist/js/bootstrap-switch.min.js"></script>
 <!--user script-->
 <script src="main.js"></script>
 

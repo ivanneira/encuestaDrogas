@@ -3,7 +3,7 @@
  */
 
 //se especifica la cantidad
-var cantidad = 2;
+var cantidad = 1;
 
 //En ésta variable se agregan los nombres de las variables que devuelven los datos en cada tarjeta
 var respuestasTarjetas = [];
@@ -45,7 +45,7 @@ function llenarHTML(index){
 
     //rotación de las tarjetas
     var rotation = 5;
-    var randomRotate = Math.floor(Math.random()*10) - rotation;
+    var randomRotate = -1;//Math.floor(Math.random()*10) - rotation;
 
     //marco principal con boton siguiente y comenzar de nuevo
     var htmlFrame =
@@ -95,7 +95,7 @@ function llenarHTML(index){
             //animación de la tarjeta
             function(callback){
 
-                $("#tarjeta"+index).animateCss("fadeInUp");
+                $("#tarjeta"+index).animateCss("fadeInLeftBig");
 
                 callback();
             }
@@ -108,8 +108,6 @@ function llenarHTML(index){
 
         window.location.reload();
     });
-
-
 
 
     //evento del botón siguiente
@@ -171,8 +169,12 @@ function finalizarEncuesta(){
     $("#finalizar").click(function(){
 
         alert(saveToDb());
+    });
 
+    //evento de botón empezar de nuevo
+    $(".restart").click(function(){
 
+        window.location.reload();
     });
 }
 

@@ -9,7 +9,7 @@
     $( document ).on( "tarjeta1", function( event ) {
 
         //guarda los datos
-        if(validadores1()){
+        if(validadores()){
 
             respuestasTarjetas.respuesta1 =
             {
@@ -17,7 +17,9 @@
                 numeroCuestionario: $("#numeroCuestionario").val(),
                 escuela: $("#ddEscuela").val(),
                 departamento: $("#ddDepartamento").val(),
-                localidad: $("#ddLocalidad").val()
+                localidad: $("#ddLocalidad").val(),
+                edad: $("#edad").val(),
+                sexo: $("#rbSexo")
             };
 
             //cuando los datos se ingresaron correctamente
@@ -30,7 +32,7 @@
     });
 
     //Dentro de esta función se puede establecer cualquier tipo de criterio para evaluar si puede o no guardarse el dato
-    function validadores1(){
+    function validadores(){
 
         //variable global continuar definida en main.js
         continuar = true;
@@ -66,6 +68,14 @@
             continuar = false;
         }else{
             $("#ddLocalidad").selectpicker('setStyle', 'btn-danger', 'remove');
+
+        }
+
+        if(!numberPatt.test($("#edad").val())){
+            $("#edad").css("border","solid 3px red");
+            continuar = false;
+        }else{
+            $("#edad").css("border","solid 1px grey");
 
         }
 
@@ -634,6 +644,142 @@
         </div>
     </div>
 
+    <!--DATOS DE ENCUESTADO-->
+
+    <div class="row">
+        <h4>Datos del encuestado:</h4>
+    </div>
+
+    <div class="row">
+
+        <div class="col-md-6">
+            <input  type="number" class="form-control" id="edad" placeholder="Edad?">
+        </div>
+
+        <div class="col-md-6 borde text-center">
+
+            <div class="radio">
+                <label><input class="radios" type="radio" value="1" name="rbSexo" checked="checked">Femenino</label>
+            </div>
+            <div class="radio">
+                 <label><input class="radios" type="radio" value="2" name="rbSexo">Masculino</label>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!--PREGUNTA 1-->
+
+    <div class="row ">
+            <h4>1 - ¿Alguna vez consumiste bebidas alcohólicas?</h4>
+    </div>
+
+    <div class="row  text-center">
+
+        <input value="1" type="checkbox" name="pregunta1Alcohol">
+
+    </div>
+
+    <!--PREGUNTA 2-->
+
+    <div class="row">
+        <h4>2 - ¿Alguna vez consumiste drogas?</h4>
+    </div>
+
+    <div class="row  text-center">
+
+        <input value="1" type="checkbox" name="pregunta2Drogas">
+
+    </div>
+
+    <!--PREGUNTA 3-->
+
+    <div class="row">
+        <h4>3 - ¿Alguna vez pensaste que tenías que reducir tu consumo de ... ?</h4>
+    </div>
+
+    <div class="row text-center">
+
+        <div class="col-md-6 borde alcohol">
+            <h5>Alcohol</h5>
+
+            <input value="1" type="checkbox" name="pregunta3Alcohol">
+
+        </div>
+        <div class="col-md-6 borde drogas">
+            <h5>Drogas</h5>
+
+            <input value="1" type="checkbox" name="pregunta3Drogas">
+        </div>
+
+    </div>
+
+    <!---PREGUNTA 4-->
+
+    <div class="row">
+        <h4>3 - ¿Te han molestado observaciones de tu familia, allegados, conocidos acerca de tus hábitos de consumo de ... ?</h4>
+    </div>
+
+    <div class="row text-center">
+
+        <div class="col-md-6 borde alcohol">
+            <h5>Alcohol</h5>
+
+            <input value="1" type="checkbox" name="pregunta4Alcohol">
+
+        </div>
+        <div class="col-md-6 borde drogas">
+            <h5>Drogas</h5>
+
+            <input value="1" type="checkbox" name="pregunta4Drogas">
+        </div>
+
+    </div>
+
+    <!---PREGUNTA 5-->
+
+    <div class="row">
+        <h4>5 - ¿ Alguna vez te sentiste a disgusto o culpable por tu manera de consumir ... ?</h4>
+    </div>
+
+    <div class="row text-center">
+
+        <div class="col-md-6 borde alcohol">
+            <h5>Alcohol</h5>
+
+            <input value="1" type="checkbox" name="pregunta5Alcohol">
+
+        </div>
+        <div class="col-md-6 borde drogas">
+            <h5>Drogas</h5>
+
+            <input value="1" type="checkbox" name="pregunta5Drogas">
+        </div>
+
+    </div>
+
+    <!---PREGUNTA 6-->
+
+    <div class="row">
+        <h4>6 - ¿ Alguna vez tuviste que consumir para empezar el día algún tipo de ... ?</h4>
+    </div>
+
+    <div class="row text-center">
+
+        <div class="col-md-6 borde alcohol">
+            <h5>Alcohol</h5>
+
+            <input value="1" type="checkbox" name="pregunta6Alcohol">
+
+        </div>
+        <div class="col-md-6 borde drogas">
+            <h5>Drogas</h5>
+
+            <input value="1" type="checkbox" name="pregunta6Drogas">
+        </div>
+
+    </div>
 
 </div>
 
@@ -653,5 +799,67 @@
     $('#ddLocalidad').selectpicker({
         style: 'btn-default',
         size: 4
+    });
+
+    $("[name='pregunta1Alcohol']").bootstrapSwitch({
+        onText: "SI",
+        offText: "NO",
+        size: "small"
+    });
+
+
+    $("[name='pregunta2Drogas']").bootstrapSwitch({
+        onText: "SI",
+        offText: "NO",
+        size: "small"
+    });
+
+
+    $("[name='pregunta3Alcohol']").bootstrapSwitch({
+        onText: "SI",
+        offText: "NO",
+        size: "small"
+    });
+
+    $("[name='pregunta3Drogas']").bootstrapSwitch({
+        onText: "SI",
+        offText: "NO",
+        size: "small"
+    });
+
+    $("[name='pregunta4Alcohol']").bootstrapSwitch({
+        onText: "SI",
+        offText: "NO",
+        size: "small"
+    });
+
+    $("[name='pregunta4Drogas']").bootstrapSwitch({
+        onText: "SI",
+        offText: "NO",
+        size: "small"
+    });
+
+    $("[name='pregunta5Alcohol']").bootstrapSwitch({
+        onText: "SI",
+        offText: "NO",
+        size: "small"
+    });
+
+    $("[name='pregunta5Drogas']").bootstrapSwitch({
+        onText: "SI",
+        offText: "NO",
+        size: "small"
+    });
+
+    $("[name='pregunta6Alcohol']").bootstrapSwitch({
+        onText: "SI",
+        offText: "NO",
+        size: "small"
+    });
+
+    $("[name='pregunta6Drogas']").bootstrapSwitch({
+        onText: "SI",
+        offText: "NO",
+        size: "small"
     });
 </script>

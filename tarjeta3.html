@@ -6,16 +6,15 @@
 
     //evento personalizo para la carga de el objeto con los datos (evento + índice)
     //hay que escribir a mano qué campo corresponde a cada variable
-    $( document ).on( "tarjeta2", function( event ) {
+    $( document ).on( "tarjeta3", function( event ) {
 
         //guarda los datos
-        if(validadores2()){
+        if(validadores3()){
 
             respuestasTarjetas.respuesta1 =
             {
 
-                edad: $("#edad").val(),
-                sexo: $("#rbSexo")
+                edad: $("#edad").val()
             };
 
             //cuando los datos se ingresaron correctamente
@@ -29,7 +28,7 @@
 
     //Dentro de esta función se puede establecer cualquier tipo de criterio para evaluar si puede o no guardarse el dato
     //el nombre  tiene que ir seriado como en número de tarjeta para no sobreescribir la de otras tarjetas
-    function validadores2(){
+    function validadores3(){
 
         //variable global continuar definida en main.js
         continuar = true;
@@ -42,26 +41,25 @@
 
 <div>
     <div class="row">
-        <h4>Datos del encuestado:</h4>
+        <h4>1 - ¿Alguna vez consumiste bebidas alcohólicas?</h4>
     </div>
 
-    <div class="row">
+    <div class="row borde">
 
-        <div class="col-md-6">
-            <input  type="number" class="form-control" id="edad" placeholder="Edad?">
-        </div>
-
-        <div class="col-md-6">
-            <div class="borde">
+            <div class="col-md-6">
                 <div class="radio">
-                    <label><input class="radios" type="radio" value="1" name="rbSexo" checked="checked">Femenino</label>
-                </div>
-                <div class="radio">
-                    <label><input class="radios" type="radio" value="2" name="rbSexo">Masculino</label>
+                    <label><input class="radios" type="radio" value="1" name="rbAlcohol" checked="checked">SI</label>
                 </div>
             </div>
-        </div>
 
+            <div class="col-md-6">
+
+
+                    <div class="radio">
+                        <label><input class="radios" type="radio" value="0" name="rbAlcohol">NO</label>
+                    </div>
+
+            </div>
     </div>
 
 
