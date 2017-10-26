@@ -1,8 +1,6 @@
 {
   "directory": "bower_components",
   "timeout": 120000,
-  "proxy": "http://10.2.0.1:6588",
-  "https-proxy": "http://10.2.0.1:6588",
   "no-proxy":"127.0.0.1"
 
 }
