@@ -838,6 +838,8 @@
         size: "small"
     });
 
+
+
     //carga de switchs
     for(var i = 1; i <= 6 ; i++) {
 
@@ -862,5 +864,10 @@
             labelWidth: 10
         });
     }
+
+    $("[name='pregunta1Alcohol']").on('switchChange.bootstrapSwitch', function(event){
+
+        console.dir(event)
+    });
 
 </script>
