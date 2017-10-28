@@ -654,7 +654,7 @@
 
         <div class="col-xs-6 col-sm-6 col-md-6 text-center">
 
-            <input value="1" type="checkbox" name="sexo">
+            <input id="switch0" value="1" type="checkbox" name="sexo">
 
         </div>
 
@@ -672,12 +672,12 @@
 
         <div class="col-xs-6 col-sm-6 col-md-6">
 
-            <input value="1" type="checkbox" name="pregunta1Alcohol">
+            <input id="switch1" type="checkbox" name="pregunta1Alcohol">
 
         </div>
         <div class="col-xs-6 col-sm-6 col-md-6">
 
-                <input value="1" type="checkbox" name="ncPregunta1">
+                <input id="switch2" value="1" type="checkbox" name="ncPregunta1">
         </div>
 
     </div>
@@ -694,12 +694,12 @@
 
         <div class="col-xs-6 col-sm-6 col-md-6">
 
-            <input value="1" type="checkbox" name="pregunta2Drogas">
+            <input id="switch3" value="1" type="checkbox" name="pregunta2Drogas">
         </div>
 
         <div class="col-xs-6 col-sm-6 col-md-6">
 
-            <input value="1" type="checkbox" name="ncPregunta2">
+            <input id="switch4 value="1" type="checkbox" name="ncPregunta2">
 
         </div>
 
@@ -716,18 +716,18 @@
         <div class="col-xs-4 col-sm-4 col-md-4  alcohol">
             <h5>Alcohol</h5>
 
-            <input value="1" type="checkbox" name="pregunta3Alcohol">
+            <input id="switch5"value="1" type="checkbox" name="pregunta3Alcohol">
 
 
         </div>
         <div class="col-xs-4 col-sm-4 col-md-4  drogas">
             <h5>Drogas</h5>
 
-            <input value="1" type="checkbox" name="pregunta3Drogas">
+            <input id="switch6" value="1" type="checkbox" name="pregunta3Drogas">
         </div>
         <div class="col-xs-4 col-sm-4 col-md-4">
             <br>
-            <input class="nc" value="1" type="checkbox" name="ncPregunta3">
+            <input id="switch7" class="nc" value="1" type="checkbox" name="ncPregunta3">
         </div>
 
     </div>
@@ -743,17 +743,17 @@
         <div class="col-xs-4 col-sm-4 col-md-4  alcohol">
             <h5>Alcohol</h5>
 
-            <input value="1" type="checkbox" name="pregunta4Alcohol">
+            <input id="switch8" value="1" type="checkbox" name="pregunta4Alcohol">
 
         </div>
         <div class="col-xs-4 col-sm-4 col-md-4  drogas">
             <h5>Drogas</h5>
 
-            <input value="1" type="checkbox" name="pregunta4Drogas">
+            <input id="switch9" value="1" type="checkbox" name="pregunta4Drogas">
         </div>
         <div class="col-xs-4 col-sm-4 col-md-4">
             <br>
-            <input class="nc" value="1" type="checkbox" name="ncPregunta4">
+            <input id="switch10" class="nc" value="1" type="checkbox" name="ncPregunta4">
         </div>
 
     </div>
@@ -769,17 +769,17 @@
         <div class="col-xs-4 col-sm-4 col-md-4  alcohol">
             <h5>Alcohol</h5>
 
-            <input value="1" type="checkbox" name="pregunta5Alcohol">
+            <input id="switch11" value="1" type="checkbox" name="pregunta5Alcohol">
 
         </div>
         <div class="col-xs-4 col-sm-4 col-md-4  drogas">
             <h5>Drogas</h5>
 
-            <input value="1" type="checkbox" name="pregunta5Drogas">
+            <input id="switch12" value="1" type="checkbox" name="pregunta5Drogas">
         </div>
         <div class="col-xs-4 col-sm-4 col-md-4">
             <br>
-            <input class="nc" value="1" type="checkbox" name="ncPregunta5">
+            <input id="switch13" class="nc" value="1" type="checkbox" name="ncPregunta5">
         </div>
 
     </div>
@@ -795,17 +795,17 @@
         <div class="col-xs-4 col-sm-4 col-md-4  alcohol">
             <h5>Alcohol</h5>
 
-            <input value="1" type="checkbox" name="pregunta6Alcohol">
+            <input id="switch14" value="1" type="checkbox" name="pregunta6Alcohol">
 
         </div>
         <div class="col-xs-4 col-sm-4 col-md-4  drogas">
             <h5>Drogas</h5>
 
-            <input value="1" type="checkbox" name="pregunta6Drogas">
+            <input id="switch15" value="1" type="checkbox" name="pregunta6Drogas">
         </div>
         <div class="col-xs-4 col-sm-4 col-md-4">
             <br>
-            <input class="nc" value="1" type="checkbox" name="ncPregunta6">
+            <input id="switch16" class="nc" value="1" type="checkbox" name="ncPregunta6">
         </div>
 
     </div>
@@ -869,5 +869,26 @@
 
         console.dir(event)
     });
+
+    for( var i = 0 ; i <= 16 ; i ++){
+
+
+        switch(i) {
+
+            case 1 : {
+
+                $("switch"+i).on('switchChange.bootstrapSwitch', function(event){
+
+                    console.dir(event)
+                });
+
+            }
+            break;
+            case 2 : {
+
+            }
+            break;
+        }
+    }
 
 </script>
