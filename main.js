@@ -45,7 +45,7 @@ function llenarHTML(index){
 
     //rotación de las tarjetas
     var rotation = 5;
-    var randomRotate = -1;//Math.floor(Math.random()*10) - rotation;
+    var randomRotate = 0;//Math.floor(Math.random()*10) - rotation;
 
     //marco principal con boton siguiente y comenzar de nuevo
     var htmlFrame =
