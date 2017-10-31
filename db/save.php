@@ -28,10 +28,11 @@
 		$det = $_POST['det'];
 */
 
-		print_r($_POST);
+		var_dump($_POST);
 
 	die;
 	$query = $db->Consulta("insert into peticiones (cs,ape, nom,tel, dir,mot,det) values ('$cs','$ape','$nom','$tel','$dir','$mot','$det')");
+	//$query = $db->Consulta("insert into encuestaCAGE (numeroCuestionario,departamento, localidad,escuela, edad,sexo,r1,r2,) values ('$cs','$ape','$nom','$tel','$dir','$mot','$det')");
 
 
 	$mensaje = "La solicitud no pudo ser enviada.";

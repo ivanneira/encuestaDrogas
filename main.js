@@ -168,7 +168,7 @@ function finalizarEncuesta(){
 
     $("#finalizar").click(function(){
 
-        alert(saveToDb());
+        alert(saveToDb(respuestasTarjetas.respuesta1));
     });
 
     //evento de botón empezar de nuevo
@@ -178,9 +178,37 @@ function finalizarEncuesta(){
     });
 }
 
-function saveToDb(){
+function saveToDb(data){
 
-    console.dir(respuestasTarjetas);
+    //console.dir(respuestasTarjetas);
 
-    return "Se guardó correctamente";
+    function metele() {
+        $.ajax({
+            type: "POST",
+            async: true,
+            url: "db/save.php",
+            data: data.serialize(),
+            dataType: "json",
+            success: function (response) {
+/*
+                var data = response;
+
+                console.dir(response);
+
+                if (data.estado == "true") {
+                    alert(data.mensaje);
+                    $('#frm_data')[0].reset();
+                    location.reload();
+                }*/
+                return "Se guardó correctamente";
+            },
+            error: function (e) {
+                //event.stopPropagation();
+                //alert("error al enviar solicitud, reintente");
+                return "error al enviar solicitud, reintente enseguida";
+            }
+        });
+    }
+
+
 }

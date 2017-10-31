@@ -1,6 +1,6 @@
 <?php
 
-define ('DATABASE_NAME' , 'PROTURencuesta');
+define ('DATABASE_NAME' , 'encuestas');
 
 define ('DATABASE_HOST', '10.64.65.200');
 
