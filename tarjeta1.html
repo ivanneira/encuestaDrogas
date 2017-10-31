@@ -654,7 +654,7 @@
 
         <div class="col-xs-6 col-sm-6 col-md-6 text-center">
 
-            <input id="switch0" value="1" type="checkbox" name="sexo">
+            <input id="switch0"  type="checkbox" name="sexo">
 
         </div>
 
@@ -677,7 +677,7 @@
         </div>
         <div class="col-xs-6 col-sm-6 col-md-6">
 
-                <input id="switch2" value="1" type="checkbox" name="ncPregunta1">
+                <input id="switch2"  type="checkbox" name="ncPregunta1">
         </div>
 
     </div>
@@ -716,18 +716,18 @@
         <div class="col-xs-4 col-sm-4 col-md-4  alcohol">
             <h5>Alcohol</h5>
 
-            <input id="switch5" value="1" type="checkbox" name="pregunta3Alcohol">
+            <input id="switch5"  type="checkbox" name="pregunta3Alcohol">
 
 
         </div>
         <div class="col-xs-4 col-sm-4 col-md-4  drogas">
             <h5>Drogas</h5>
 
-            <input id="switch6" value="1" type="checkbox" name="pregunta3Drogas">
+            <input id="switch6"  type="checkbox" name="pregunta3Drogas">
         </div>
         <div class="col-xs-4 col-sm-4 col-md-4">
             <br>
-            <input id="switch7" class="nc" value="1" type="checkbox" name="ncPregunta3">
+            <input id="switch7" class="nc"  type="checkbox" name="ncPregunta3">
         </div>
 
     </div>
@@ -743,17 +743,17 @@
         <div class="col-xs-4 col-sm-4 col-md-4  alcohol">
             <h5>Alcohol</h5>
 
-            <input id="switch8" value="1" type="checkbox" name="pregunta4Alcohol">
+            <input id="switch8"  type="checkbox" name="pregunta4Alcohol">
 
         </div>
         <div class="col-xs-4 col-sm-4 col-md-4  drogas">
             <h5>Drogas</h5>
 
-            <input id="switch9" value="1" type="checkbox" name="pregunta4Drogas">
+            <input id="switch9"  type="checkbox" name="pregunta4Drogas">
         </div>
         <div class="col-xs-4 col-sm-4 col-md-4">
             <br>
-            <input id="switch10" class="nc" value="1" type="checkbox" name="ncPregunta4">
+            <input id="switch10" class="nc"  type="checkbox" name="ncPregunta4">
         </div>
 
     </div>
@@ -769,17 +769,17 @@
         <div class="col-xs-4 col-sm-4 col-md-4  alcohol">
             <h5>Alcohol</h5>
 
-            <input id="switch11" value="1" type="checkbox" name="pregunta5Alcohol">
+            <input id="switch11"  type="checkbox" name="pregunta5Alcohol">
 
         </div>
         <div class="col-xs-4 col-sm-4 col-md-4  drogas">
             <h5>Drogas</h5>
 
-            <input id="switch12" value="1" type="checkbox" name="pregunta5Drogas">
+            <input id="switch12"  type="checkbox" name="pregunta5Drogas">
         </div>
         <div class="col-xs-4 col-sm-4 col-md-4">
             <br>
-            <input id="switch13" class="nc" value="1" type="checkbox" name="ncPregunta5">
+            <input id="switch13" class="nc"  type="checkbox" name="ncPregunta5">
         </div>
 
     </div>
@@ -795,17 +795,17 @@
         <div class="col-xs-4 col-sm-4 col-md-4  alcohol">
             <h5>Alcohol</h5>
 
-            <input id="switch14" value="1" type="checkbox" name="pregunta6Alcohol">
+            <input id="switch14"  type="checkbox" name="pregunta6Alcohol">
 
         </div>
         <div class="col-xs-4 col-sm-4 col-md-4  drogas">
             <h5>Drogas</h5>
 
-            <input id="switch15" value="1" type="checkbox" name="pregunta6Drogas">
+            <input id="switch15"  type="checkbox" name="pregunta6Drogas">
         </div>
         <div class="col-xs-4 col-sm-4 col-md-4">
             <br>
-            <input id="switch16" class="nc" value="1" type="checkbox" name="ncPregunta6">
+            <input id="switch16" class="nc"  type="checkbox" name="ncPregunta6">
         </div>
 
     </div>
@@ -838,10 +838,42 @@
         size: "small"
     });
 
+    $("[name='pregunta1Alcohol']").bootstrapSwitch({
+        onText: "SI",
+        offText: "NO",
+        size: "small",
+        state: true
+    });
+
+    $("[name='ncPregunta1']").bootstrapSwitch({
+        onText: "No Contesta",
+        onColor: "danger",
+        offColor: "success",
+        offText: "Contesta",
+        size: "mini",
+        labelWidth: 10
+    });
+
+    $("[name='pregunta2Drogas']").bootstrapSwitch({
+        onText: "SI",
+        offText: "NO",
+        size: "small",
+        state: true
+    });
+
+    $("[name='ncPregunta2").bootstrapSwitch({
+        onText: "No Contesta",
+        onColor: "danger",
+        offColor: "success",
+        offText: "Contesta",
+        size: "mini",
+        labelWidth: 10
+    });
+
 
 
     //carga de switchs
-    for(var i = 1; i <= 6 ; i++) {
+    for(var i = 2; i <= 6 ; i++) {
 
         $("[name='pregunta"+ i + "Alcohol']").bootstrapSwitch({
             onText: "SI",
@@ -865,6 +897,7 @@
         });
     }
 
+
     $("[name='pregunta1Alcohol']").on('switchChange.bootstrapSwitch', function (e, data) {
 
 
@@ -885,7 +918,7 @@
     $("[name='pregunta2Drogas']").on('switchChange.bootstrapSwitch', function (e, data) {
 
 
-        if($("#switch1").is(':checked')){
+        if($("#switch3").is(':checked')){
             $("[name='pregunta3Drogas']").bootstrapSwitch('disabled',false);
             $("[name='pregunta4Drogas']").bootstrapSwitch('disabled',false);
             $("[name='pregunta5Drogas']").bootstrapSwitch('disabled',false);
