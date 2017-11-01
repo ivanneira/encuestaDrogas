@@ -5,34 +5,26 @@
 
 	$db = new MYSQL();
 
-	/*
-		Array
-		(
-		    [cs] => Otros
-		    [ape] => AASD
-		    [nom] => ASDASD
-		    [tel] => 123123
-		    [dir] => A@A.COM
-		    [mot] => Personal
-		    [det] => ASD
-		)
-	*/
 
-/*
-		$cs = $_POST['cs'];
-		$ape = $_POST['ape'];
-		$nom = $_POST['nom'];
-		$tel = $_POST['tel'];
-		$dir = $_POST['dir'];
-		$mot = $_POST['mot'];
-		$det = $_POST['det'];
-*/
+		$numeroCuestionario = $_POST['numeroCuestionario'];
+		$departamento = $_POST['departamento'];
+		$localidad = $_POST['localidad'];
+		$escuela = $_POST['escuela'];
+		$edad = $_POST['edad'];
+		$sexo = $_POST['sexo'];
+		$r1 = $_POST['r1'];
+		$r2 = $_POST['r2'];
+		$r3A = $_POST['r3A'];
+		$r3D = $_POST['r3D'];
+		$r4A = $_POST['r4A'];
+		$r4D = $_POST['r4D'];
+		$r5A = $_POST['r5A'];
+		$r5D = $_POST['r5D'];
+		$r6A = $_POST['r6A'];
+		$r6D = $_POST['r6D'];
 
-		var_dump($_POST);
 
-	die;
-	$query = $db->Consulta("insert into peticiones (cs,ape, nom,tel, dir,mot,det) values ('$cs','$ape','$nom','$tel','$dir','$mot','$det')");
-	//$query = $db->Consulta("insert into encuestaCAGE (numeroCuestionario,departamento, localidad,escuela, edad,sexo,r1,r2,) values ('$cs','$ape','$nom','$tel','$dir','$mot','$det')");
+	$query = $db->Consulta("insert into encuestaCAGE (numeroCuestionario,departamento, localidad,escuela, edad,sexo,r1,r2,r3A,r3D,r4A,r4D,r5A,r5D,r6A,r6D) values ('$numeroCuestionario','$departamento','$localidad','$escuela','$edad','$sexo','$r1','$r2','$r3A','$r3D','$r4A','$r4D','$r5A','$r5D','$r6A','$r6D')");
 
 
 	$mensaje = "La solicitud no pudo ser enviada.";
@@ -40,16 +32,9 @@
 
     if(!$query)
     {
-        $mensaje = "Procesado correctamente. Nº: ". $db->getLastID(). " un nos pondremos en contacto con ud.";
+        $mensaje = "Procesado correctamente.";
         $estado = "true";
 
-        $to = $dir;
-		$subject = "Solicitud de Permisos de Red";
-		$txt = "Se ha enviado la solicitud Nº: ".$db->getLastID(). " será evaluado y en breve nos pondremos en contacto con ud.";
-		$headers = "From: msp@salud.sanjuan.gob.ar" . "\r\n" .
-		"CC: j.recioleguizamon@gmail.com";
-
-		mail($to,$subject,$txt,$headers);
     }
     else
     {

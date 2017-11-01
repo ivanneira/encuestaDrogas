@@ -53,10 +53,10 @@ function llenarHTML(index){
             '<div class="tContainer'+ index+'">' +
             '</div>' +
             '<br>'+
-            '<div class="col-md-6 col-sm-6">' +
+            '<div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">' +
                 '<div class="btn btn-lg btn-block btn-default restart" ">Empezar de nuevo</div>' +
             '</div>' +
-            '<div class="col-md-6 col-sm-6">' +
+            '<div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">' +
                 '<div class="btn btn-lg btn-block btn-success" id="btnSiguiente'+ index +'">Siguiente</div>'+
             '</div>'+
         '</div>';
@@ -155,12 +155,16 @@ function finalizarEncuesta(){
         '<div class="finalizado tarjeta">'+
             '<h4>Encuesta Completada!</h4>'+
                 mensajeFinal +
-            '<div class="col-md-6 col-sm-6">' +
+            '<div class="col-xs-4 col-lg-4 col-md-4 col-sm-4">' +
+                '<button class="btn btn-lg btn-block btn-info" id="exportar">Exportar</button>'+
+            '</div>' +
+            '<div class="col-xs-4 col-lg-4 col-md-4 col-sm-4">' +
                 '<div class="btn btn-lg btn-block btn-default restart" ">No guardar</div>' +
             '</div>' +
-            '<div class="col-md-6 col-sm-6">' +
+            '<div class="col-xs-4 col-lg-4 col-md-4 col-sm-4">' +
                 '<button class="btn btn-lg btn-block btn-danger" id="finalizar">Finalizado</button>'+
             '</div>' +
+
         '</div>';
 
     $(".preguntas").append(html);
@@ -168,7 +172,7 @@ function finalizarEncuesta(){
 
     $("#finalizar").click(function(){
 
-        alert(saveToDb(respuestasTarjetas.respuesta1));
+        saveToDb(respuestasTarjetas.respuesta1)
     });
 
     //evento de botón empezar de nuevo
@@ -176,39 +180,55 @@ function finalizarEncuesta(){
 
         window.location.reload();
     });
+
+    //evento del botón exportar
+    $("#exportar").click(function(){
+
+        $.ajax({
+            type: "POST",
+            async: true,
+            url: "excelExport/export.php",
+            success: function (response) {
+
+                console.dir(response);
+
+
+            },
+            error: function (e) {
+
+
+                console.dir(e)
+
+
+            }
+        });
+    });
 }
 
 function saveToDb(data){
 
-    //console.dir(respuestasTarjetas);
+    //console.dir(data)
 
-    function metele() {
-        $.ajax({
-            type: "POST",
-            async: true,
-            url: "db/save.php",
-            data: data.serialize(),
-            dataType: "json",
-            success: function (response) {
-/*
-                var data = response;
+    $("#finalizar").attr('disabled','true');
 
-                console.dir(response);
+    $.ajax({
+        type: "POST",
+        async: true,
+        url: "db/save.php",
+        data: data,
+        dataType: "json",
+        success: function (response) {
 
-                if (data.estado == "true") {
-                    alert(data.mensaje);
-                    $('#frm_data')[0].reset();
-                    location.reload();
-                }*/
-                return "Se guardó correctamente";
-            },
-            error: function (e) {
-                //event.stopPropagation();
-                //alert("error al enviar solicitud, reintente");
-                return "error al enviar solicitud, reintente enseguida";
-            }
-        });
-    }
+            console.dir(response);
+            alert("Se guardó correctamente");
+            window.location.reload();
+
+        },
+        error: function (e) {
+            alert( "error al enviar solicitud, reintente enseguida");
+            $("#finalizar").attr('disabled','false');
 
 
+        }
+    });
 }
