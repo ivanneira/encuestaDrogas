@@ -38,6 +38,11 @@ $(function(){
 
         llenarHTML(i);
     }
+
+    //evento del botón exportar
+    $("#exportar").click(function(){
+        window.location.assign("http://localhost/encuestaDrogas/excelExport/export.php")
+    });
 });
 
 //función que carga las tarjetas 1 a 1
@@ -53,10 +58,13 @@ function llenarHTML(index){
             '<div class="tContainer'+ index+'">' +
             '</div>' +
             '<br>'+
-            '<div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">' +
+            '<div class="col-xs-12 col-lg-4 col-md-4 col-sm-12">' +
+                '<div class="btn btn-lg btn-block btn-default" id="exportar">Descargar Excel</div>' +
+            '</div>' +
+            '<div class="col-xs-12 col-lg-4 col-md-4 col-sm-12">' +
                 '<div class="btn btn-lg btn-block btn-default restart" ">Empezar de nuevo</div>' +
             '</div>' +
-            '<div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">' +
+            '<div class="col-xs-12 col-lg-4 col-md-4 col-sm-12">' +
                 '<div class="btn btn-lg btn-block btn-success" id="btnSiguiente'+ index +'">Siguiente</div>'+
             '</div>'+
         '</div>';
@@ -155,13 +163,10 @@ function finalizarEncuesta(){
         '<div class="finalizado tarjeta">'+
             '<h4>Encuesta Completada!</h4>'+
                 mensajeFinal +
-            '<div class="col-xs-4 col-lg-4 col-md-4 col-sm-4">' +
-                '<button class="btn btn-lg btn-block btn-info" id="exportar">Exportar</button>'+
-            '</div>' +
-            '<div class="col-xs-4 col-lg-4 col-md-4 col-sm-4">' +
+            '<div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">' +
                 '<div class="btn btn-lg btn-block btn-default restart" ">No guardar</div>' +
             '</div>' +
-            '<div class="col-xs-4 col-lg-4 col-md-4 col-sm-4">' +
+            '<div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">' +
                 '<button class="btn btn-lg btn-block btn-danger" id="finalizar">Finalizado</button>'+
             '</div>' +
 
@@ -181,28 +186,6 @@ function finalizarEncuesta(){
         window.location.reload();
     });
 
-    //evento del botón exportar
-    $("#exportar").click(function(){
-
-        $.ajax({
-            type: "POST",
-            async: true,
-            url: "excelExport/export.php",
-            success: function (response) {
-
-                console.dir(response);
-
-
-            },
-            error: function (e) {
-
-
-                console.dir(e)
-
-
-            }
-        });
-    });
 }
 
 function saveToDb(data){
