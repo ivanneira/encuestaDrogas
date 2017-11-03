@@ -59,7 +59,7 @@ function llenarHTML(index){
             '</div>' +
             '<br>'+
             '<div class="col-xs-12 col-lg-4 col-md-4 col-sm-12">' +
-                '<div class="btn btn-lg btn-block btn-default" id="exportar">Descargar Excel</div>' +
+                '<div class="btn btn-lg btn-block btn-primary" id="exportar">Descargar Excel</div>' +
             '</div>' +
             '<div class="col-xs-12 col-lg-4 col-md-4 col-sm-12">' +
                 '<div class="btn btn-lg btn-block btn-default restart" ">Empezar de nuevo</div>' +
@@ -202,12 +202,12 @@ function saveToDb(data){
         dataType: "json",
         success: function (response) {
 
-            console.dir(response);
             alert("Se guardó correctamente");
             window.location.reload();
 
         },
         error: function (e) {
+
             alert( "error al enviar solicitud, reintente enseguida");
             $("#finalizar").attr('disabled','false');
 

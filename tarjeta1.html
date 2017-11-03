@@ -24,6 +24,7 @@
                 r1: respuesta($("#p1"),$("#nc1")),
                 //pregunta 2
                 r2: respuesta($("#p2"),$("#nc2")),
+                tipoDroga: $("#ddCuales").is(':disabled') ? 'Ninguno' : $("#ddCuales").val(),
                 //pregunta 3
                 r3A: respuesta($("#p3A"),$("#nc3A")),
                 r3D: respuesta($("#p3D"),$("#nc3D")),
@@ -729,12 +730,29 @@
 
 
 
-        <div class="col-xs-6 col-sm-6 col-md-6">
+        <div class="col-xs-4 col-sm-4 col-md-4">
 
             <input id="p2" type="checkbox" name="pregunta2Drogas">
         </div>
 
-        <div class="col-xs-6 col-sm-6 col-md-6">
+        <div class="col-xs-4 col-sm-4 col-md-4">
+
+            <select tabindex="3" id="ddCuales" name="cuales" class="selectpicker" data-live-search="true" title="¿Cuál?">
+                <option value='cannabis'>Cannabis / Marihuana / Faso / Porro</option>
+                <option value='cocaina'>Cocaína / Merca</option>
+                <option value='anfetaminas'>Anfetaminas</option>
+                <option value='extasis'>Éxtasis</option>
+                <option value='lsd'>LSD / Pepa</option>
+                <option value='heroina'>Heroína</option>
+                <option value='paco'>Paco</option>
+                <option value='otros' selected>Otros</option>
+
+            </select>
+
+        </div>
+
+
+        <div class="col-xs-4 col-sm-4 col-md-4">
 
             <label for="nc2">N/C</label>
             <input id="nc2"  type="checkbox" name="ncPregunta2">
@@ -868,17 +886,26 @@
     //Inicialización de selectpickers
     $('#ddDepartamento').selectpicker({
         style: 'btn-default',
-        size: 4
+        size: 20,
+        header: 'Seleccione departamento'
     });
 
     $('#ddEscuela').selectpicker({
         style: 'btn-default',
-        size: 4
+        size: 10,
+        header: 'Seleccione escuela'
     });
 
     $('#ddLocalidad').selectpicker({
         style: 'btn-default',
-        size: 4
+        size: 10,
+        header: 'Seleccione localidad'
+    });
+
+    $('#ddCuales').selectpicker({
+        style: 'btn-default',
+        size: 10,
+        header: 'Seleccione la droga'
     });
 
     $("[name='sexo']").bootstrapSwitch({
@@ -960,6 +987,7 @@
             $("#nc4D").prop("disabled",false);
             $("#nc5D").prop("disabled",false);
             $("#nc6D").prop("disabled",false);
+            $("#ddCuales").prop("disabled",false);
         }else{
             $("[name='pregunta3Drogas']").bootstrapSwitch('disabled',true);
             $("[name='pregunta4Drogas']").bootstrapSwitch('disabled',true);
@@ -969,6 +997,7 @@
             $("#nc4D").prop("disabled",true);
             $("#nc5D").prop("disabled",true);
             $("#nc6D").prop("disabled",true);
+            $("#ddCuales").prop("disabled",true);
         }
 
     });

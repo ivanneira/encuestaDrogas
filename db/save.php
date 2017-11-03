@@ -14,6 +14,7 @@
 		$sexo = $_POST['sexo'];
 		$r1 = $_POST['r1'];
 		$r2 = $_POST['r2'];
+        $tipoDroga = $_POST['tipoDroga'];
 		$r3A = $_POST['r3A'];
 		$r3D = $_POST['r3D'];
 		$r4A = $_POST['r4A'];
@@ -24,7 +25,7 @@
 		$r6D = $_POST['r6D'];
 
 
-	$query = $db->Consulta("insert into encuestaCAGE (numeroCuestionario,departamento, localidad,escuela, edad,sexo,r1,r2,r3A,r3D,r4A,r4D,r5A,r5D,r6A,r6D) values ('$numeroCuestionario','$departamento','$localidad','$escuela','$edad','$sexo','$r1','$r2','$r3A','$r3D','$r4A','$r4D','$r5A','$r5D','$r6A','$r6D')");
+	$query = $db->Consulta("insert into encuestaCAGE (numeroCuestionario,departamento, localidad,escuela, edad,sexo,r1,r2,tipoDroga,r3A,r3D,r4A,r4D,r5A,r5D,r6A,r6D) values ('$numeroCuestionario','$departamento','$localidad','$escuela','$edad','$sexo','$r1','$r2','$tipoDroga','$r3A','$r3D','$r4A','$r4D','$r5A','$r5D','$r6A','$r6D')");
 
 
 	$mensaje = "La solicitud no pudo ser enviada.";

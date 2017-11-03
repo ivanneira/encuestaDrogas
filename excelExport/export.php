@@ -18,6 +18,7 @@ $exporter = new ExportDataExcel('browser', 'test.xls');
 $exporter->initialize(); // starts streaming data to web browser
 
 $exporter->addRow(array(
+    "Fecha",
     "Numero de cuestionario",
     "Departamento",
     "Localidad",
@@ -26,6 +27,7 @@ $exporter->addRow(array(
     "Sexo",
     "Pregunta 1",
     "Pregunta 2",
+    "Tipo de Droga",
     "Pregunta 3 Alcohol",
     "Pregunta 3 Drogas",
     "Pregunta 4 Alcohol",
@@ -49,6 +51,7 @@ while($row = $db->fetch_array($result) ){
     //array_push($valores,$row);
 
     $exporter->addRow(array(
+        $row['fecha'],
         $row['numeroCuestionario'],
         traductorDepartamento($row['departamento']),
         traductorLocalidad($row['localidad']),
@@ -57,6 +60,7 @@ while($row = $db->fetch_array($result) ){
         traductorSexo($row['sexo']),
         traductorSwitch($row['r1']),
         traductorSwitch($row['r2']),
+        $row['tipoDroga'],
         traductorSwitch($row['r3A']),
         traductorSwitch($row['r3D']),
         traductorSwitch($row['r4A']),
