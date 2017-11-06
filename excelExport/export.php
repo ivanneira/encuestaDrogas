@@ -13,7 +13,7 @@ require_once("../excelExport/php-export-data.class.php");
 
 
 
-$exporter = new ExportDataExcel('browser', 'test.xls');
+$exporter = new ExportDataExcel('browser', 'encuestaCAGE2017.xls');
 
 $exporter->initialize(); // starts streaming data to web browser
 
