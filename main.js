@@ -41,7 +41,7 @@ $(function(){
 
     //evento del botón exportar
     $("#exportar").click(function(){
-        window.location.assign("http://localhost/encuestaDrogas/excelExport/export.php")
+        window.location.assign("http://10.64.65.200:84/encuestaCAGE/excelExport/export.php")
     });
 });
 
