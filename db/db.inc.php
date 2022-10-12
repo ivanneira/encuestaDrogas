@@ -1,11 +1,11 @@
 <?php
 
-define ('DATABASE_NAME' , 'encuestas');
+define ('DATABASE_NAME' , 'X');
 
-define ('DATABASE_HOST', '10.64.65.200');
+define ('DATABASE_HOST', 'x.x.x.x');
 
-define ('DATABASE_USER', 'msp');
+define ('DATABASE_USER', 'X');
 
-define ('DATABASE_PASS', 'nautilus');
+define ('DATABASE_PASS', 'X');
 
 ?>
